@@ -1,0 +1,13 @@
+# Select all art periods, assigned to artworks or not
+
+PREFIX schema: <https://schema.org/>
+
+SELECT *
+WHERE {
+  ?artPeriod a schema:DefinedTerm ;
+    schema:name ?name .
+  OPTIONAL { ?artPeriod schema:startDate ?startDate }
+  OPTIONAL { ?artPeriod schema:endDate ?endDate }
+}
+ORDER BY ?startDate
+LIMIT 10000

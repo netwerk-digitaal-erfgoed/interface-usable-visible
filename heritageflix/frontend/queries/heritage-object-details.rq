@@ -1,0 +1,29 @@
+PREFIX schema: <https://schema.org/>
+
+SELECT *
+WHERE {
+  BIND(<http://hdl.handle.net/10934/RM0001.COLLECT.10005> AS ?heritageObject)
+
+  ?heritageObject a schema:VisualArtwork ;
+    schema:name ?name ;
+    schema:description ?description ;
+    schema:dateCreated ?dateCreated ;
+  OPTIONAL { ?heritageObject schema:mainEntityOfPage ?webpage }
+
+  # Art period
+  ?heritageObject schema:temporalCoverage/schema:name ?artPeriodName ;
+    schema:temporalCoverage/schema:startDate ?artPeriodStartDate ;
+    schema:temporalCoverage/schema:endDate ?artPeriodEndDate .
+
+  # Image
+  ?heritageObject schema:image/schema:contentUrl ?imageContentUrl ;
+    schema:image/schema:encodingFormat ?imageEncodingFormat ;
+    schema:image/schema:license ?imageLicense . # TBD: also add name of the license?
+
+  # Creator
+  ?heritageObject schema:creator/schema:name ?creatorName .
+
+  # Publisher
+  ?heritageObject schema:publisher/schema:name ?publisherName .
+  OPTIONAL { ?heritageObject schema:publisher/schema:mainEntityOfPage ?publisherHomepage }
+}

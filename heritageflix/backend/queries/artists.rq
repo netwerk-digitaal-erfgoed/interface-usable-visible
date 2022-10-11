@@ -1,0 +1,21 @@
+# Generate artists
+# SPARQL endpoint: https://api.data.netwerkdigitaalerfgoed.nl/datasets/rkd/rkdartists/services/rkdartists/sparql
+# UI of the SPARQL endpoint: https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists
+
+PREFIX schema: <http://schema.org/> # Beware: http, not https!
+
+CONSTRUCT {
+  ?artist a ?type ;
+    schema:name ?name .
+}
+WHERE {
+  # For testing specific resources
+  VALUES ?artist {
+    <https://data.rkd.nl/artists/26887>
+  }
+
+  ?artist a ?type .
+  VALUES ?type { schema:Person }
+  ?artist schema:name ?name .
+}
+LIMIT 10000

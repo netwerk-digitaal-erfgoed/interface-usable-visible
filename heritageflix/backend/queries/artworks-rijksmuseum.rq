@@ -1,0 +1,92 @@
+# Select artworks for testing - do not use in production!
+# SPARQL endpoint: https://api.data.netwerkdigitaalerfgoed.nl/datasets/Rijksmuseum/collection/services/collection/sparql
+# UI of the SPARQL endpoint: https://data.netwerkdigitaalerfgoed.nl/Rijksmuseum/collection/sparql/collection
+
+PREFIX aat: <http://vocab.getty.edu/aat/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX ore: <http://www.openarchives.org/ore/terms/>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?heritageObject a schema:VisualArtwork ;
+    schema:artform ?type ;
+    schema:name ?title ;
+    schema:description ?description ;
+    schema:publisher <https://www.rijksmuseum.nl> ;
+    schema:creator ?creator ;
+    schema:temporal ?dateCreated ;
+    schema:dateCreated ?yearCreated ;
+    schema:temporalCoverage ?artPeriod ;
+    schema:mainEntityOfPage ?isShownAt ;
+    schema:isBasedOn ?heritageObject ;
+    schema:image [
+      a schema:ImageObject ;
+      schema:contentUrl ?isShownBy ;
+      schema:encodingFormat "image/jpeg" ;
+      schema:license ?rights ;
+    ]
+}
+WHERE {
+  # For testing specific resources
+  # VALUES ?heritageObject {
+    # <http://hdl.handle.net/10934/RM0001.COLLECT.8097>
+    # <http://hdl.handle.net/10934/RM0001.COLLECT.347387>
+  # }
+
+  ?aggregation a ore:Aggregation ;
+    edm:isShownBy ?isShownBy ;
+    edm:rights ?rights ;
+    edm:aggregatedCHO ?heritageObject .
+
+  # Webpage of the object, if any
+  OPTIONAL { ?aggregation edm:isShownAt ?isShownAt }
+
+  ?heritageObject dc:type ?type .
+  VALUES ?type {
+    # We're only interested in paintings
+    # TODO: add all types of paintings: https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&subjectid=300033638
+    aat:300033618 # paintings (visual works)
+    aat:300177435 # easel paintings
+    aat:300033639 # cabinet pictures (paintings)
+    aat:300265620 # double-sided paintings
+  }
+
+  ?heritageObject dc:title ?title .
+  FILTER(LANG(?title) = "nl")
+
+  ?heritageObject dc:description ?description .
+  FILTER(LANG(?description) = "nl")
+
+  # TODO: align Rijksmuseum's creators with RKDartists
+  #?heritageObject dc:creator ?creator .
+  BIND(<https://data.rkd.nl/artists/26887> AS ?creator) # Hard-coded for now
+
+  ?heritageObject dct:created ?dateCreated .
+  FILTER(LANG(?dateCreated) = "nl") # Dates are literals
+  BIND(SUBSTR(?dateCreated, 1, 4) AS ?possiblyYearCreated) # From '1580 - 1600' to '1580'
+  FILTER(REGEX(?possiblyYearCreated, "^\\d{4}$")) # Keep only the dates that are years
+  BIND(xsd:integer(?possiblyYearCreated) AS ?yearCreated)
+
+  # TODO: allow for multiple art periods, if years overlap
+  BIND(
+    COALESCE(
+      IF(?yearCreated >= 1000 && ?yearCreated < 1450, aat:300020756, ?noPeriodFound), # Medieval
+      IF(?yearCreated >= 1450 && ?yearCreated < 1600, aat:300021140, ?noPeriodFound), # Renaissance
+      IF(?yearCreated >= 1600 && ?yearCreated < 1750, aat:300021147, ?noPeriodFound), # Baroque
+      # IF(?yearCreated >= 1750 && ?yearCreated < 1850, aat:TODO, ?noPeriodFound), # Classicism - TODO: dates correct?
+      IF(?yearCreated >= 1780 && ?yearCreated < 1850, aat:300172863, ?noPeriodFound), # Romantic
+      IF(?yearCreated >= 1830 && ?yearCreated < 1870, aat:300172861, ?noPeriodFound), # Realist
+      IF(?yearCreated >= 1860 && ?yearCreated < 1890, aat:300021503, ?noPeriodFound), # Impressionist
+      IF(?yearCreated >= 1890 && ?yearCreated < 1970, aat:300021474, ?noPeriodFound), # Modernist
+      IF(?yearCreated >= 1970, aat:300022208, ?noPeriodFound) # Postmodern
+    )
+  AS ?artPeriod)
+
+  # Select artworks of a specific art period, if desired
+  # FILTER(?artPeriod = aat:300020756)
+}
+LIMIT 10000

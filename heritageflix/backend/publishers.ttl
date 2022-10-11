@@ -1,0 +1,48 @@
+@prefix schema: <https://schema.org/> .
+
+# TBD: can we generate this data from sources? Or do we have to hard-code it?
+
+<https://www.mauritshuis.nl>
+  a schema:Organization ;
+  schema:name "Mauritshuis" ;
+  schema:mainEntityOfPage <https://www.mauritshuis.nl> .
+
+<https://www.museumdefundatie.nl>
+  a schema:Organization ;
+  schema:name "Museum de Fundatie" ;
+  schema:mainEntityOfPage <https://www.museumdefundatie.nl> .
+
+<https://www.rijksmuseum.nl>
+  a schema:Organization ;
+  schema:name "Rijksmuseum" ;
+  schema:mainEntityOfPage <https://www.rijksmuseum.nl> .
+
+<https://www.catharijneconvent.nl>
+  a schema:Organization ;
+  schema:name "Museum Catharijneconvent" ;
+  schema:mainEntityOfPage <https://www.catharijneconvent.nl> .
+
+<https://www.stedelijkmuseumschiedam.nl>
+  a schema:Organization ;
+  schema:name "Stedelijk Museum Schiedam" ;
+  schema:mainEntityOfPage <https://www.stedelijkmuseumschiedam.nl> .
+
+<https://vanabbemuseum.nl>
+  a schema:Organization ;
+  schema:name "Van Abbe Museum" ;
+  schema:mainEntityOfPage <https://vanabbemuseum.nl> .
+
+<https://www.museumbelvedere.nl>
+  a schema:Organization ;
+  schema:name "Museum Belvédère" ;
+  schema:mainEntityOfPage <https://www.museumbelvedere.nl> .
+
+<https://www.rijksakademie.nl>
+  a schema:Organization ;
+  schema:name "Rijksakademie van Beeldende Kunsten" ;
+  schema:mainEntityOfPage <https://www.rijksakademie.nl> .
+
+<http://www.geertgrootehuis.nl/museum-deventer>
+  a schema:Organization ;
+  schema:name "Museum Deventer" ;
+  schema:mainEntityOfPage <http://www.geertgrootehuis.nl/museum-deventer> .
