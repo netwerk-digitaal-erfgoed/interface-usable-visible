@@ -136,7 +136,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
 |ID|Not applicable|IRI|TBD: probably a blank node|-|
-|Type|`rdf:type`|IRI|Value allowed: `schema:ImageObject`|-|
+|Type|`rdf:type`|IRI|Value allowed: `schema:ImageObject`|`schema:ImageObject`|
 |URL|`schema:contentUrl`|IRI|-|`https://lh3.googleusercontent.com/Ks-HM3WNwUrnkukVya9poQn_JMHy7hXx226X70MmtC7g9wLs3Ki_yZtEQ0Zkp6PPNARx1SZKStnaPNjnuE-hWMDzcg=s0`|
 |MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by NDE's data processor|`image/jpeg`|
 |License|`schema:license`|IRI|TBD: should we also expose the name of the license, e.g. "Public Domain"?|`http://creativecommons.org/publicdomain/zero/1.0/deed.nl`|
