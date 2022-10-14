@@ -55,6 +55,7 @@ The art periods supported by the app:
 Notes:
 1. If an artwork was created in a year that belongs to two or more art periods (i.e. Romantic and Realist), the corresponding AAT terms should be assigned.
 1. The supported art periods aren't perfect. For example, what if an artwork was created in 2022 but its style is Romantic? Currently art period Postmodern is assigned. This suffices for the prototype, but should be resolved in a real-world app.
+1. The years of the art periods can be subject to debate. Heritage institutions and art historians can use other periods than the app. Ideally we could re-use the art periods used by the institutions, but this data is currently not present in their source data.
 
 ### Media object
 
