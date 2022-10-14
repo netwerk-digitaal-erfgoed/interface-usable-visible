@@ -16,7 +16,7 @@ The data that are required to make the app work.
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
 |ID|ID|1|Identifier of the entity|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
-|Type|String|1|Type of the entity|`Artwork`, `Book`, `Photo`|
+|Type|String|1|Type of the entity|`Artwork`|
 |Specific type|String|TBD: 1 or more?|Specific type of the entity|`Easel painting`|
 |Title|String|1|Primary title of the entity|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`|
 |Description|String|1|Short description of the entity|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`|
