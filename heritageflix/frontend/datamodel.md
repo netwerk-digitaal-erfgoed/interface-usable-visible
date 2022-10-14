@@ -15,36 +15,53 @@ The data that are required to make the app work.
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the entity|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
-|Type|String|1|Type of the entity|`Artwork`|
-|Specific type|String|TBD: 1 or more?|Specific type of the entity|`Easel painting`|
-|Title|String|1|Primary title of the entity|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`|
-|Description|String|1|Short description of the entity|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`|
-|Date created|String|1|Date when the entity was created (precise or a range)|`1667`, `1600-1700`, `1667 - 1671`, `circa 1650`|
-|Year created|Number|1|Year (if known or retrievable from a range or string) when the entity was created, to allow for sorting|`1667`, `1600`, `1650`|
-|URL of webpage|URL|0 or 1|Online location where the entity is presented|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
-|Art period and style|ID|1 or more|Art period and style of the entity|`http://vocab.getty.edu/aat/300021147`|
-|Image|ID|1|Image of the entity|`http://hdl.handle.net/10934/RM0001.COLLECT.10001/image`|
-|Creator|ID|1 or more|Creator of the entity|`https://data.rkd.nl/artists/26887`|
-|Publisher|ID|1|Publisher of the entity|`https://www.rijksmuseum.nl`|
+|ID|ID|1|Identifier of the object|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
+|Type|String|1|Type of the object|`Artwork`|
+|Specific type|String|TBD: 1 or more?|Specific type of the object|`Easel painting`|
+|Title|String|1|Primary title of the object|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`|
+|Description|String|1|Short description of the object|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`|
+|Date created|String|1|Date when the object was created (precise or a range)|`1667`, `1600-1700`, `1667 - 1671`, `circa 1650`|
+|Year created|Number|1|Year (if known or retrievable from a range or string) when the object was created, to allow for sorting|`1667`, `1600`, `1650`|
+|URL of webpage|URL|0 or 1|Online location where the object is presented|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
+|Art period and style|ID|1 or more|Art period and style of the object, according to the AAT|`http://vocab.getty.edu/aat/300021147`|
+|Image|ID|1|Image of the object|`http://hdl.handle.net/10934/RM0001.COLLECT.10001/image`|
+|Creator|ID|1 or more|Creator of the object|`https://data.rkd.nl/artists/26887`|
+|Publisher|ID|1|Publisher of the object|`https://www.rijksmuseum.nl`|
 |Source|ID|1|Source of the data, for traceability|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
 
 ### Art period and style
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the entity|`http://vocab.getty.edu/aat/300021147`|
-|Type|String|1|Type of the entity|`Art period`|
-|Name|String|1|Name of the entity|`Baroque`|
+|ID|ID|1|Identifier of the term|`http://vocab.getty.edu/aat/300021147`|
+|Type|String|1|Type of the term|`Art period`|
+|Name|String|1|Name of the term|`Baroque`|
 |Start year|Number|1|Year that marks the start of the period, to allow for sorting|`1590`|
 |End year|Number|0 or 1: not set if the period is ongoing|Year that marks the end of the period, to allow for sorting|`1750`|
+
+The art periods supported by the app:
+
+1. Medieval: if year of creation >= 1000 and < 1450. AAT term: `http://vocab.getty.edu/aat/300020756`
+1. Renaissance: if year of creation >= 1450 and < 1600. AAT term: `http://vocab.getty.edu/aat/300021140`
+1. Baroque: if year of creation >= 1600 and < 1750. AAT term: `http://vocab.getty.edu/aat/300021147`
+1. Romantic: if year of creation >= 1780 and < 1850. AAT term: `http://vocab.getty.edu/aat/300172863`
+1. Realist: if year of creation >= 1830 and < 1870. AAT term: `http://vocab.getty.edu/aat/300172861`
+1. Impressionist: if year of creation >= 1860 and < 1890. AAT term: `http://vocab.getty.edu/aat/300021503`
+1. Modernist: if year of creation >= 1890 and < 1970. AAT term: `http://vocab.getty.edu/aat/300021474`
+1. Postmodern: if year of creation >= 1970. AAT term: `http://vocab.getty.edu/aat/300022208`
+
+**TBD**: where does 'Classicism' fit in?
+
+Notes:
+1. If an artwork was created in a year that belongs to two or more art periods (i.e. Romantic and Realist), the corresponding AAT terms should be assigned.
+1. The supported art periods aren't perfect. For example, what if an artwork was created in 2022 but its style is Romantic? Currently art period Postmodern is assigned. This suffices for the prototype, but should be resolved in a real-world app.
 
 ### Media object
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the entity|`http://hdl.handle.net/10934/RM0001.COLLECT.10001/image`|
-|Type|String|1|Type of the entity|`Image`|
+|ID|ID|1|Identifier of the object|`http://hdl.handle.net/10934/RM0001.COLLECT.10001/image`|
+|Type|String|1|Type of the object|`Image`|
 |URL|URL|1|Online location where the object can be found|`https://lh3.googleusercontent.com/Ks-HM3WNwUrnkukVya9poQn_JMHy7hXx226X70MmtC7g9wLs3Ki_yZtEQ0Zkp6PPNARx1SZKStnaPNjnuE-hWMDzcg=s0`|
 |MIME type|String|TBD: 1?|MIME type of the object|`image/jpeg`|
 |License|String|1|License for using the object|`Public domain`|
@@ -53,18 +70,18 @@ The data that are required to make the app work.
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the entity|`https://data.rkd.nl/artists/26887`|
-|Type|String|1|Type of the entity|`Person`|
-|Name|String|1|Name of the entity|`Eversdijck, Willem`|
+|ID|ID|1|Identifier of the person|`https://data.rkd.nl/artists/26887`|
+|Type|String|1|Type of the person|`Person`|
+|Name|String|1|Name of the person|`Eversdijck, Willem`|
 
 ### Organization
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the entity|`https://www.rijksmuseum.nl`|
-|Type|String|1|Type of the entity|`Organization`|
-|Name|String|1|Name of the entity|`Rijksmuseum`|
-|URL of homepage|URL|TBD: 0 or 1?|Homepage of the entity, for finding more information|`https://www.rijksmuseum.nl`|
+|ID|ID|1|Identifier of the organization|`https://www.rijksmuseum.nl`|
+|Type|String|1|Type of the organization|`Organization`|
+|Name|String|1|Name of the organization|`Rijksmuseum`|
+|URL of homepage|URL|TBD: 0 or 1?|Homepage of the organization, for finding more information|`https://www.rijksmuseum.nl`|
 
 ### Diagram
 
@@ -129,7 +146,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
 |ID|Not applicable|IRI|`https://data.rkd.nl/artists/26887`|
-|Type|`rdf:type`|IRI|Value allowed: `schema:Person`|-|
+|Type|`rdf:type`|IRI|Value allowed: `schema:Person`|`schema:Person`|
 |Name|`schema:name`|Literal|TBD: the name is formatted in a certain way. Is this sufficient for the app?|`Eversdijck, Willem`|
 
 #### Organization
@@ -137,7 +154,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
 |ID|Not applicable|IRI|TBD: can we get this info from the source? Or do we need to add it?|`https://www.rijksmuseum.nl`|
-|Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|-|
+|Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Rijksmuseum`|
 |URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://www.rijksmuseum.nl`|
 
