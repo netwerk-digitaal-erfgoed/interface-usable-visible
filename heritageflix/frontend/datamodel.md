@@ -44,13 +44,11 @@ The art periods supported by the app:
 1. Medieval: if year of creation >= 1000 and < 1450. AAT term: `http://vocab.getty.edu/aat/300020756`
 1. Renaissance: if year of creation >= 1450 and < 1600. AAT term: `http://vocab.getty.edu/aat/300021140`
 1. Baroque: if year of creation >= 1600 and < 1750. AAT term: `http://vocab.getty.edu/aat/300021147`
-1. Romantic: if year of creation >= 1780 and < 1850. AAT term: `http://vocab.getty.edu/aat/300172863`
+1. Classicism: if year of creation >= 1750 and < 1850. AAT term: `http://vocab.getty.edu/aat/300056513`
 1. Realist: if year of creation >= 1830 and < 1870. AAT term: `http://vocab.getty.edu/aat/300172861`
 1. Impressionist: if year of creation >= 1860 and < 1890. AAT term: `http://vocab.getty.edu/aat/300021503`
 1. Modernist: if year of creation >= 1890 and < 1970. AAT term: `http://vocab.getty.edu/aat/300021474`
 1. Postmodern: if year of creation >= 1970. AAT term: `http://vocab.getty.edu/aat/300022208`
-
-**TBD**: where does 'Classicism' fit in?
 
 Notes:
 1. If an artwork was created in a year that belongs to two or more art periods (i.e. Romantic and Realist), the corresponding AAT terms should be assigned.
