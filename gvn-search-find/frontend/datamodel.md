@@ -28,6 +28,14 @@ The data that are required to make the app work.
 |Publisher|ID|1|Publisher of the object|-|`https://www.zuiderzeemuseum.nl/`|
 |Source|ID|1|Source of the data, for traceability|-|(todo)|
 
+### Place
+
+|Name|Datatype|Cardinality|Description|Remarks|Example|
+|-|-|-|-|-|-|
+|ID|ID|1|Identifier of the place|-|`https://sws.geonames.org/2756077/`|
+|Type|String|1|Type of the place|-|`Place`|
+|Name|String|1|Primary name of the place|-|`Enkhuizen`|
+
 ### Media object
 
 |Name|Datatype|Cardinality|Description|Remarks|Example|
@@ -54,8 +62,10 @@ The data that are required to make the app work.
 ```mermaid
 erDiagram
  		HeritageObject ||--|| MediaObject : image
+    HeritageObject |{--}o Place : contentLocation
     MediaObject ||--|| MediaObject : thumbnail
     HeritageObject |{--|| Organization : publisher
+    Organization |{--|| Place : location
 ```
 
 ## RDF Data Model (RDM)
