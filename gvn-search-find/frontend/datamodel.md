@@ -133,6 +133,14 @@ The aim is to make it easy for frontend developers to use the data. This means: 
   schema:isBasedOn <http://data.collectienederland.nl/resource/document/zuiderzeemuseum/FR06089> .
 ```
 
+#### Place
+
+```turtle
+<https://sws.geonames.org/2756077/>
+  a schema:Place ;
+  schema:name "Enkhuizen" .
+```
+
 #### Media objects
 
 ```turtle
