@@ -72,12 +72,12 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |-|-|-|-|-|-|
 |ID|Not applicable|IRI|Identifier of the object|-|`http://data.collectienederland.nl/resource/document/zuiderzeemuseum/FR06089`|
 |Type|`rdf:type`|IRI|Type of the object|TBD: allow other types?|`schema:CreativeWork`|
-|n/a|`schema:additionalType`|IRI|Specific type of the object|TBD: necessary? TBD: which terminology source?|`http://vocab.getty.edu/aat/300026819` or `https://data.cultureelerfgoed.nl/term/id/cht/1ea51d41-ca5c-40d3-8a85-362968878b0d`|
+|n/a|`schema:additionalType`|IRI|Specific type of the object|-|Terminology source: CHT. `https://data.cultureelerfgoed.nl/term/id/cht/1ea51d41-ca5c-40d3-8a85-362968878b0d`|
 |Title|`schema:name`|Literal|Primary title of the object|-|`Enkhuizen. Zuidertoren met buurt.`|
 |Description|`schema:description`|Literal|Short description of the object|-|`Prentbriefkaart uit de Collectie Ringeling`|
 |Date created|`schema:dateCreated`|Date|Date when the object was created (precise or a range)|-|`1900`|
-|Location|`schema:contentLocation`|IRI|Location depicted on or described by the object|TBD: which terminology source? TBD: in Schema.org this should be of type `schema:Place`|`https://sws.geonames.org/2756077/`|
-|Keywords|`schema:keywords`|IRI|Keywords or tags to describe the object|TBD: which terminology source?|(todo)|
+|Location|`schema:contentLocation`|IRI|Location depicted on or described by the object|Terminology source: GeoNames. TBD: in Schema.org this should be of type `schema:Place`|`https://sws.geonames.org/2756077/`|
+|Keywords|`schema:keywords`|IRI|Keywords or tags to describe the object|Terminology source: CHT|(todo)|
 |URL of webpage|`schema:mainEntityOfPage`|IRI|Online location where the object is presented|-|`http://hdl.handle.net/21.12111/zzm-collect-72250`|
 |Image|`schema:image`|IRI|Image of the object|-|`https://images.memorix.nl/zzm/download/fullsize/7ab75b4f-3e37-9f95-bbc2-ae5d8f4eed6d/image`|
 |Creator|`schema:creator`|Literal|Creator of the object|Literal, not a term (no need for currently)|(todo)|
@@ -103,7 +103,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Zuiderzeemuseum`|
 |URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://www.zuiderzeemuseum.nl`|
-|Location|`schema:location`|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://sws.geonames.org/2756077/`|
+|Location|`schema:location`|IRI|This value doesn't come from the source; it's added by NDE's data processor. Terminology source: GeoNames. TBD: in Schema.org this should be of type `schema:Place`.|`https://sws.geonames.org/2756077/`|
 
 ### Example
 
@@ -112,13 +112,11 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 ```turtle
 <http://hdl.handle.net/21.12111/zzm-collect-72250>
   a schema:CreativeWork ;
-  schema:additionalType <http://vocab.getty.edu/aat/300026819> ;
+  schema:additionalType <https://data.cultureelerfgoed.nl/term/id/cht/1ea51d41-ca5c-40d3-8a85-362968878b0d> ;
   schema:name "Enkhuizen. Zuidertoren met buurt." ;
   schema:description "Prentbriefkaart uit de Collectie Ringeling" ;
   schema:dateCreated "1900" ;
   schema:contentLocation <https://sws.geonames.org/2756077/> ;
-  schema:keywords <https://data.cultureelerfgoed.nl/term/id/cht/a2ffb2c5-397c-47c9-bdb8-a655cd21326d>,
-    <https://data.cultureelerfgoed.nl/term/id/cht/805be952-ff77-4ae1-96f6-6e0b6cb078b6> ;
   schema:mainEntityOfPage <http://hdl.handle.net/21.12111/zzm-collect-72250> ;
   schema:image <https://images.memorix.nl/zzm/download/fullsize/7ab75b4f-3e37-9f95-bbc2-ae5d8f4eed6d/image> ;
   schema:publisher <https://www.zuiderzeemuseum.nl> ;
