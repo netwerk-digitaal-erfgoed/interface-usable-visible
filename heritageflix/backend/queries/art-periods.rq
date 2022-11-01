@@ -35,7 +35,7 @@ WHERE {
       IF(?artPeriod = aat:300020756, 1000, ?noPeriodFound), # Medieval
       IF(?artPeriod = aat:300021140, 1450, ?noPeriodFound), # Renaissance
       IF(?artPeriod = aat:300021147, 1600, ?noPeriodFound), # Baroque
-      IF(?artPeriod = aat:300172863, 1780, ?noPeriodFound), # Romantic
+      IF(?artPeriod = aat:300172863, 1750, ?noPeriodFound), # Classicism
       IF(?artPeriod = aat:300172861, 1830, ?noPeriodFound), # Realist
       IF(?artPeriod = aat:300021503, 1860, ?noPeriodFound), # Impressionist
       IF(?artPeriod = aat:300021474, 1890, ?noPeriodFound), # Modernist
@@ -49,7 +49,7 @@ WHERE {
       IF(?artPeriod = aat:300020756, 1450, ?noPeriodFound), # Medieval
       IF(?artPeriod = aat:300021140, 1600, ?noPeriodFound), # Renaissance
       IF(?artPeriod = aat:300021147, 1750, ?noPeriodFound), # Baroque
-      IF(?artPeriod = aat:300172863, 1850, ?noPeriodFound), # Romantic
+      IF(?artPeriod = aat:300172863, 1850, ?noPeriodFound), # Classicism
       IF(?artPeriod = aat:300172861, 1870, ?noPeriodFound), # Realist
       IF(?artPeriod = aat:300021503, 1890, ?noPeriodFound), # Impressionist
       IF(?artPeriod = aat:300021474, 1970, ?noPeriodFound) # Modernist

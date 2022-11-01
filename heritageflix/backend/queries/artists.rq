@@ -10,9 +10,9 @@ CONSTRUCT {
 }
 WHERE {
   # For testing specific resources
-  VALUES ?artist {
-    <https://data.rkd.nl/artists/26887>
-  }
+  # VALUES ?artist {
+  #   <https://data.rkd.nl/artists/26887>
+  # }
 
   ?artist a ?type .
   VALUES ?type { schema:Person }
