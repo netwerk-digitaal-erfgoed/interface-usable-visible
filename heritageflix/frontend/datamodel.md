@@ -17,7 +17,7 @@ The data that are required to make the app work.
 |-|-|-|-|-|
 |ID|ID|1|Identifier of the object|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
 |Type|String|1|Type of the object|`Artwork`|
-|Specific type|String|TBD: 1 or more?|Specific type of the object|`Easel painting`|
+|Specific type|String|1 or more|Specific type of the object|`Easel painting`|
 |Title|String|1|Primary title of the object|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`|
 |Description|String|1|Short description of the object|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`|
 |Date created|String|1|Date when the object was created (precise or a range)|`1667`, `1600-1700`, `1667 - 1671`, `circa 1650`|
@@ -51,8 +51,8 @@ The art periods supported by the app:
 1. Postmodern: if year of creation >= 1970. AAT term: `http://vocab.getty.edu/aat/300022208`
 
 Notes:
-1. If an artwork was created in a year that belongs to two or more art periods (i.e. Romantic and Realist), the corresponding AAT terms should be assigned.
-1. The supported art periods aren't perfect. For example, what if an artwork was created in 2022 but its style is Romantic? Currently art period Postmodern is assigned. This suffices for the prototype, but should be resolved in a real-world app.
+1. If an artwork was created in a year that belongs to two or more art periods (i.e. Classicism and Realist), the corresponding AAT terms should be assigned.
+1. The supported art periods aren't perfect. For example, what if an artwork was created in 2022 but its style is Realist? Currently art period Postmodern is assigned. This suffices for the prototype, but should be resolved in a real-world app.
 1. The years of the art periods can be subject to debate. Heritage institutions and art historians can use other periods than the app. Ideally we could re-use the art periods used by the institutions, but this data is currently not present in their source data.
 
 ### Media object
@@ -62,7 +62,7 @@ Notes:
 |ID|ID|1|Identifier of the object|`http://hdl.handle.net/10934/RM0001.COLLECT.10001/image`|
 |Type|String|1|Type of the object|`Image`|
 |URL|URL|1|Online location where the object can be found|`https://lh3.googleusercontent.com/Ks-HM3WNwUrnkukVya9poQn_JMHy7hXx226X70MmtC7g9wLs3Ki_yZtEQ0Zkp6PPNARx1SZKStnaPNjnuE-hWMDzcg=s0`|
-|MIME type|String|TBD: 1?|MIME type of the object|`image/jpeg`|
+|MIME type|String|0 or 1|MIME type of the object|`image/jpeg`|
 |License|String|1|License for using the object|`Public domain`|
 
 ### Person
@@ -80,7 +80,7 @@ Notes:
 |ID|ID|1|Identifier of the organization|`https://www.rijksmuseum.nl`|
 |Type|String|1|Type of the organization|`Organization`|
 |Name|String|1|Name of the organization|`Rijksmuseum`|
-|URL of homepage|URL|TBD: 0 or 1?|Homepage of the organization, for finding more information|`https://www.rijksmuseum.nl`|
+|URL of homepage|URL|1|Homepage of the organization, for finding more information|`https://www.rijksmuseum.nl`|
 
 ### Diagram
 
@@ -105,16 +105,16 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
 |ID|Not applicable|IRI|-|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
-|Type|`rdf:type`|IRI|TBD: use `schema:VisualArtwork` (specific) or `schema:CreativeWork` (generic)?|
-|Specific type|`schema:artform` (specific) or `schema:additionalType` (generic)|IRI|TBD: which predicate?|`http://vocab.getty.edu/aat/300177435`|
-|Title|`schema:name`|Literal|TBD: do we need the Dutch or also the English label?|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`@nl|
-|Description|`schema:description`|Literal|TBD: do we need the Dutch or also the English label?|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`@nl|
+|Type|`rdf:type`|IRI|Value allowed: `schema:VisualArtwork`. Alternatively, `schema:CreativeWork`|`schema:VisualArtwork`|
+|Specific type|`schema:artform`|IRI|Alternatively, `schema:additionalType`. Terminology source: AAT|`http://vocab.getty.edu/aat/300177435`|
+|Title|`schema:name`|Literal|Language: Dutch|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`@nl|
+|Description|`schema:description`|Literal|Language: Dutch|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`@nl|
 |Date created|`schema:temporal`|Literal|TBD: is there a better predicate? Dates aren't always ISO 8601 formatted, so we can't use `schema:dateCreated`|`1667`, `1600-1700`, `1667 - 1671`, `circa 1650`|
 |Year created|`schema:dateCreated`|`schema:Date`|The year doesn't always come from the source - it could have been extracted by NDE's data processor|`1667`, `1600`, `1650`|
 |URL of webpage|`schema:mainEntityOfPage`|IRI|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
 |Art period and style|`schema:temporalCoverage`|IRI|TBD: is there a better predicate? Also, this data doesn't come from the source; it's added by NDE's data processor|`http://vocab.getty.edu/aat/300021147`|
-|Image|`schema:image`|IRI|TBD: probably a blank node?|-|
-|Creator|`schema:creator`|IRI|TBD: can we align the creators of all data sources with RKDartists?|`https://data.rkd.nl/artists/26887`|
+|Image|`schema:image`|IRI|A blank node|-|
+|Creator|`schema:creator`|IRI|Terminology source: RKDartists|`https://data.rkd.nl/artists/26887`|
 |Publisher|`schema:publisher`|IRI|-|`https://www.rijksmuseum.nl`|
 |Source|`schema:isBasedOn`|IRI|-|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`
 
@@ -123,8 +123,8 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
 |ID|Not applicable|IRI|`http://vocab.getty.edu/aat/300021147`|
-|Type|`rdf:type`|IRI|TBD: `schema:DefinedTerm` as value? Or `skos:Concept`, as provided by the source/AAT?|-|
-|Name|`schema:name`|Literal|TBD: do we need the Dutch or also the English label?|`Barok`|
+|Type|`rdf:type`|IRI|Value allowed: `schema:DefinedTerm`|`schema:DefinedTerm`|
+|Name|`schema:name`|Literal|Language: Dutch|`Barok`|
 |Start year|`schema:startDate`|`schema:Date`|TBD: is there a better predicate? Also, this value doesn't come from the source; it's added by NDE's data processor|`1590`|
 |End year|`schema:endDate`|`schema:Date`|TBD: is there a better predicate? Also, this value doesn't come from the source; it's added by NDE's data processor|`1750`|
 
@@ -134,7 +134,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
-|ID|Not applicable|IRI|TBD: probably a blank node|-|
+|ID|Not applicable|IRI|A blank node|-|
 |Type|`rdf:type`|IRI|Value allowed: `schema:ImageObject`|`schema:ImageObject`|
 |URL|`schema:contentUrl`|IRI|-|`https://lh3.googleusercontent.com/Ks-HM3WNwUrnkukVya9poQn_JMHy7hXx226X70MmtC7g9wLs3Ki_yZtEQ0Zkp6PPNARx1SZKStnaPNjnuE-hWMDzcg=s0`|
 |MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by NDE's data processor|`image/jpeg`|
@@ -146,13 +146,13 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |-|-|-|-|-|
 |ID|Not applicable|IRI|`https://data.rkd.nl/artists/26887`|
 |Type|`rdf:type`|IRI|Value allowed: `schema:Person`|`schema:Person`|
-|Name|`schema:name`|Literal|TBD: the name is formatted in a certain way. Is this sufficient for the app?|`Eversdijck, Willem`|
+|Name|`schema:name`|Literal|The name is formatted in a certain way. Is this sufficient for the app?|`Eversdijck, Willem`|
 
 #### Organization
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
-|ID|Not applicable|IRI|TBD: can we get this info from the source? Or do we need to add it?|`https://www.rijksmuseum.nl`|
+|ID|Not applicable|IRI|This value probably doesn't come from the source; it's added by NDE's data processor|`https://www.rijksmuseum.nl`|
 |Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Rijksmuseum`|
 |URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://www.rijksmuseum.nl`|
