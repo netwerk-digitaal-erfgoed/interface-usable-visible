@@ -57,7 +57,7 @@ erDiagram
 
 Translation of the Conceptual Data Model to RDF.
 
-The aim is to make it easy to query the data in a knowledge graph. This means: use a single, straightforward vocabulary and transform the data of the sources, where applicable, to make it fit the vocabulary.
+The aim is to make it easy to query the data in a knowledge graph. This means: use straightforward vocabularies and transform the data of the sources, where applicable, to make it fit the vocabularies.
 
 ### Namespaces
 
@@ -97,7 +97,7 @@ The aim is to make it easy to query the data in a knowledge graph. This means: u
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
-|ID|Not applicable|IRI|TBD: can we get this info from the source? Or do we need to add it?|`https://zaansmuseum.nl`|
+|ID|Not applicable|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://zaansmuseum.nl`|
 |Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Zaans Museum`|
 
