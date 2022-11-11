@@ -77,8 +77,7 @@ WHERE {
       IF(?yearCreated >= 1000 && ?yearCreated < 1450, aat:300020756, ?noPeriodFound), # Medieval
       IF(?yearCreated >= 1450 && ?yearCreated < 1600, aat:300021140, ?noPeriodFound), # Renaissance
       IF(?yearCreated >= 1600 && ?yearCreated < 1750, aat:300021147, ?noPeriodFound), # Baroque
-      # IF(?yearCreated >= 1750 && ?yearCreated < 1850, aat:TODO, ?noPeriodFound), # Classicism - TODO: dates correct?
-      IF(?yearCreated >= 1780 && ?yearCreated < 1850, aat:300172863, ?noPeriodFound), # Romantic
+      IF(?yearCreated >= 1750 && ?yearCreated < 1850, aat:300056513, ?noPeriodFound), # Classicism
       IF(?yearCreated >= 1830 && ?yearCreated < 1870, aat:300172861, ?noPeriodFound), # Realist
       IF(?yearCreated >= 1860 && ?yearCreated < 1890, aat:300021503, ?noPeriodFound), # Impressionist
       IF(?yearCreated >= 1890 && ?yearCreated < 1970, aat:300021474, ?noPeriodFound), # Modernist
