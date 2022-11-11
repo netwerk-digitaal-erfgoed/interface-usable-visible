@@ -19,16 +19,21 @@ CONSTRUCT {
 WHERE {
   # For testing specific resources
   # VALUES ?artPeriod {
-  #   aat:300021140
+  #   aat:300056513
   # }
 
   ?artPeriod a skos:Concept ;
     void:inDataset <http://vocab.getty.edu/dataset/aat> ;
-    gvp:broaderPreferredExtended aat:300264088 ; # "Styles and Periods Facet"
     skosxl:prefLabel ?prefLabel_uri .
 
+  ?artPeriod gvp:broaderPreferredExtended ?broaderPreferredExtended .
+  VALUES ?broaderPreferredExtended {
+    aat:300264088 # "Styles and Periods Facet"
+    aat:300163706 # "forms of expression (artistic concept)"
+  }
+
   ?prefLabel_uri dcterms:language aat:300388256 ; # Dutch (language)
-    skosxl:literalForm ?prefLabel .
+  skosxl:literalForm ?prefLabel .
 
   BIND(
     COALESCE(

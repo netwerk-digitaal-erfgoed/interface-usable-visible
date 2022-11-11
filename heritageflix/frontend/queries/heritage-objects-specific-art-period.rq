@@ -8,10 +8,11 @@ WHERE {
       ?heritageObject a schema:VisualArtwork ;
         schema:name ?name ;
         schema:dateCreated ?dateCreated ;
-        schema:image/schema:contentUrl ?imageContentUrl ;
-        schema:image/schema:encodingFormat ?imageEncodingFormat ;
-        schema:image/schema:license ?imageLicense ; # TBD: also add name of the license?
-        schema:creator/schema:name ?creatorName ;
+        schema:image ?image .
+      ?image schema:contentUrl ?imageContentUrl ;
+        schema:license ?imageLicense . # TBD: also add name of the license?
+      OPTIONAL { ?image schema:encodingFormat ?imageEncodingFormat }
+      ?heritageObject schema:creator/<http://schema.org/name> ?creatorName ;
         schema:temporalCoverage <http://vocab.getty.edu/aat/300021147> . # 'Barok'
     }
     ORDER BY ?dateCreated
