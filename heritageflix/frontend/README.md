@@ -24,4 +24,6 @@
 
 ## Version 2: generic
 
-(todo)
+### Data model
+
+1. [Here](./v2/datamodel.md)
