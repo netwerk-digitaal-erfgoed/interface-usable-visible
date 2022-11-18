@@ -24,6 +24,7 @@ The data that are required to make the app work.
 |Year created|Number|1|Year (if known or retrievable from a range or string) when the object was created, to allow for sorting|`1907`|
 |Location|ID|0 or more|Location depicted on or described by the object|`https://sws.geonames.org/2744145/`|
 |URL of webpage|URL|0 or 1|Online location where the object is presented|`http://beeldbank.cultureelerfgoed.nl/alle-afbeeldingen/detail/0091c9e8-9b8c-6926-88c1-2eb6172a3316/media/a42dfbdf-97be-2d58-772c-e87b4b2d7277`|
+|Temporal coverage|ID|0 or more|E.g. period and style of the object|`http://vocab.getty.edu/aat/300021147`|
 |Image|ID|1|Image of the object|`https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg/image`|
 |Creator|ID|1 or more|Creator of the object|-|
 |Publisher|ID|1|Publisher of the object|`https://www.cultureelerfgoed.nl/`|
@@ -80,6 +81,7 @@ erDiagram
  		HeritageObject ||--|| MediaObject : image
 		HeritageObject |{--}o Term : additionalType
 		HeritageObject |{--}o Term : subject
+		HeritageObject |{--}o Term : temporalCoverage
 		HeritageObject |{--}o Place : contentLocation
 		HeritageObject |{--}o Person : creator
     HeritageObject |{--|| Organization : publisher
@@ -107,6 +109,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Year created|`schema:dateCreated`|`xsd:gYear`|Year when the object was created|The year doesn't always come from the source - it could have been extracted by NDE's data processor|`1907`|
 |Location|`schema:contentLocation`|IRI|Location depicted on or described by the object|Terminology source: GeoNames. TBD: in Schema.org this should be of type `schema:Place`|`https://sws.geonames.org/2744145/`|
 |URL of webpage|`schema:mainEntityOfPage`|IRI|Online location where the object is presented|-|`http://beeldbank.cultureelerfgoed.nl/alle-afbeeldingen/detail/0091c9e8-9b8c-6926-88c1-2eb6172a3316/media/a42dfbdf-97be-2d58-772c-e87b4b2d7277`|
+|Temporal coverage|`schema:temporalCoverage`|IRI|-|This data doesn't always come from the source; it could have been added by NDE's data processor|`http://vocab.getty.edu/aat/300021147`|
 |Image|`schema:image`|IRI|Image of the object|-|(blank node)|
 |Creator|`schema:creator`|IRI|Creator of the object|Terminology source: RKDartists where applicable; otherwise blank nodes|(blank node)|
 |Publisher|`schema:publisher`|IRI|Publisher of the object|-|`https://www.cultureelerfgoed.nl/`|
