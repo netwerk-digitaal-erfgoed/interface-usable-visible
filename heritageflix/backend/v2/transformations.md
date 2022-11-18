@@ -22,7 +22,7 @@ Endpoint: https://www.collectienederland.nl/api/oai-pmh/?verb=ListRecords&metada
 |`schema:mainEntityOfPage`|`/rdf:RDF/ore:Aggregation/edm:isShownAt`|-|
 |`schema:temporalCoverage`|-|Ignore; the dataset does not contain temporal coverage information|
 |`schema:image`|See entity 'Media object'|-|
-|`schema:creator`|See entity 'Person'|-|
+|`schema:creator`|See entity 'Person'|It's no use reconciling the creators with terminology sources: the creators do not exist there|
 |`schema:publisher`|Fixed value: `https://www.cultureelerfgoed.nl`|-|
 |`schema:isBasedOn`|`/rdf:RDF/edm:ProvidedCHO/@rdf:about`|-|
 
