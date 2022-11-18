@@ -6,6 +6,10 @@
 
 1. [Here](./v1/datamodel.md)
 
+### Queries
+
+1. [Here](./v1/queries)
+
 ### Endpoints
 
 #### SPARQL
