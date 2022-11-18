@@ -3,6 +3,7 @@
 ## Contents
 
 1. [Conceptual Data Model (CDM)](#conceptual-data-model-cdm)
+1. [RDF Data Model (RDM)](#rdf-data-model-rdm)
 
 ## Conceptual Data Model (CDM)
 
@@ -25,8 +26,8 @@ The data that are required to make the app work.
 |Location|ID|0 or more|Location depicted on or described by the object|`https://sws.geonames.org/2744145/`|
 |URL of webpage|URL|0 or 1|Online location where the object is presented|`http://beeldbank.cultureelerfgoed.nl/alle-afbeeldingen/detail/0091c9e8-9b8c-6926-88c1-2eb6172a3316/media/a42dfbdf-97be-2d58-772c-e87b4b2d7277`|
 |Temporal coverage|ID|0 or more|E.g. period and style of the object|`http://vocab.getty.edu/aat/300021147`|
-|Image|ID|1|Image of the object|`https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg/image`|
-|Creator|ID|1 or more|Creator of the object|-|
+|Image|ID|1|Image of the object|(blank node)|
+|Creator|ID|1 or more|Creator of the object|(blank node)|
 |Publisher|ID|1|Publisher of the object|`https://www.cultureelerfgoed.nl/`|
 |Source|ID|1|Source of the data, for traceability|`http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316`|
 
@@ -34,7 +35,7 @@ The data that are required to make the app work.
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the object|`https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg/image`|
+|ID|ID|1|Identifier of the object|(blank node)|
 |Type|String|1|Type of the object|`Image`|
 |URL|URL|1|Online location where the object can be found|`https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg`|
 |MIME type|String|0 or 1|MIME type of the object|`image/jpeg`|
@@ -61,7 +62,7 @@ The data that are required to make the app work.
 
 |Name|Datatype|Cardinality|Description|Example|
 |-|-|-|-|-|
-|ID|ID|1|Identifier of the person|-|
+|ID|ID|1|Identifier of the person|(blank node)|
 |Type|String|1|Type of the person|`Person`|
 |Name|String|1|Name of the person|`Hoog, G. de`|
 
@@ -123,9 +124,11 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Type|`rdf:type`|IRI|Value allowed: `schema:ImageObject`|`schema:ImageObject`|
 |URL|`schema:contentUrl`|IRI|-|`https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg`|
 |MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by the prototype's data processor|`image/jpeg`|
-|License|`schema:license`|IRI|TBD: should we also expose the name of the license, e.g. "Public Domain"?|`http://creativecommons.org/licenses/by-sa/3.0/`|
+|License|`schema:license`|IRI|TBD: should we also expose the name of the license?|`http://creativecommons.org/licenses/by-sa/3.0/`|
 
 #### Term
+
+As provided by the terminology source (no data processing required). For illustration:
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
@@ -134,6 +137,8 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Name|`skos:prefLabel`|Literal|Language: Dutch|`kerken`|
 
 #### Place
+
+As provided by the terminology source (no data processing required). For illustration:
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
@@ -145,7 +150,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
-|ID|Not applicable|IRI|-|-|
+|ID|Not applicable|IRI|There are no IRIs from terminology sources that we can use; use blank nodes instead|(blank node)|
 |Type|`rdf:type`|IRI|Value allowed: `schema:Person`|`schema:Person`|
 |Name|`schema:name`|Literal|-|`Hoog, G. de`|
 
@@ -157,3 +162,50 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Rijksdienst voor het Cultureel Erfgoed`|
 |URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by the prototype's data processor|`https://www.cultureelerfgoed.nl`|
+
+### Example
+
+#### Heritage object
+
+```turtle
+<http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316>
+  a schema:CreativeWork ;
+  schema:additionalType <https://data.cultureelerfgoed.nl/term/id/cht/05ff3aa4-a6e8-4d93-b261-94f2bcb6167d> ;
+  schema:description "Zicht op de noorder transeptgevel" ;
+  schema:about <https://data.cultureelerfgoed.nl/term/id/cht/c15af234-87b0-433c-bbe1-880a6f717057> ;
+  schema:temporal "1907-09-28" ;
+  schema:dateCreated "1907"^^xsd:gYear ;
+  schema:contentLocation <https://sws.geonames.org/2744145/> ;
+  schema:mainEntityOfPage <http://beeldbank.cultureelerfgoed.nl/alle-afbeeldingen/detail/0091c9e8-9b8c-6926-88c1-2eb6172a3316/media/a42dfbdf-97be-2d58-772c-e87b4b2d7277> ;
+  schema:image _:b1 ;
+  schema:creator _:b2 ;
+  schema:publisher <https://www.cultureelerfgoed.nl> ;
+  schema:isBasedOn <http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316> .
+```
+
+#### Media object
+
+```turtle
+_:b1
+  a schema:ImageObject ;
+  schema:contentUrl <https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg> ;
+  schema:encodingFormat "image/jpeg" ;
+  schema:license <http://creativecommons.org/licenses/by-sa/3.0/> .
+```
+
+#### Person
+
+```turtle
+_:b2
+  a schema:Person ;
+  schema:name "Hoog, G. de" .
+```
+
+#### Organization
+
+```turtle
+<https://www.cultureelerfgoed.nl>
+  a schema:Organization ;
+  schema:name "Rijksdienst voor het Cultureel Erfgoed" ;
+  schema:mainEntityOfPage <https://www.cultureelerfgoed.nl> .
+```

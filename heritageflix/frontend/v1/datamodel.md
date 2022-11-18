@@ -168,7 +168,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
   schema:name "Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog"@nl ;
   schema:description "Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee."@nl ;
   schema:temporal "1667 - 1671" ;
-  schema:dateCreated "1667" ;
+  schema:dateCreated "1667"^^xsd:gYear ;
   schema:mainEntityOfPage <http://hdl.handle.net/10934/RM0001.COLLECT.10001> ;
   schema:temporalCoverage <http://vocab.getty.edu/aat/300021147> ;
   schema:image <http://hdl.handle.net/10934/RM0001.COLLECT.10001/image> ;
