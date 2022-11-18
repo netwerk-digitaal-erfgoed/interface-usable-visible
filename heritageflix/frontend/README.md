@@ -1,13 +1,12 @@
 # Heritageflix: frontend
 
-## Data model
+## Version 1: artworks
 
-1. [Version 1](./datamodels/v1.md)
-1. Version 2: todo
+### Data model
 
-## Endpoints
+1. [Here](./v1/datamodel.md)
 
-### Version 1
+### Endpoints
 
 #### SPARQL
 
@@ -19,11 +18,6 @@
 1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/v1/fragments
 1. UI for testing: https://query.linkeddatafragments.org/#datasources=https%3A%2F%2Fapi.data.netwerkdigitaalerfgoed.nl%2Fdatasets%2Fheritageflix%2Fv1%2Ffragments
 
-### Version 2
+## Version 2: generic
 
 (todo)
-
-## Queries
-
-1. [Version 1](./queries/v1)
-1. Version 2: (todo)

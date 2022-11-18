@@ -1,6 +1,9 @@
 # Heritageflix: backend
 
-## Queries
+## Version 1: artworks
 
-1. [Version 1](./queries/v1)
-1. Version 2: todo
+1. [Queries](./v1/queries)
+
+## Version 2: generic
+
+(todo)
