@@ -1,6 +1,4 @@
-# Heritageflix v2: backend
-
-## Data transformations
+# Heritageflix v2: data transformations
 
 To convert the source data to the [target model](../../frontend/v2/datamodel.md) of the prototype.
 
