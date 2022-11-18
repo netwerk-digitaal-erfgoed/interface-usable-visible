@@ -2,20 +2,28 @@
 
 ## Data model
 
-[Here](./datamodel.md)
+1. [Version 1](./datamodels/v1.md)
+1. Version 2: todo
 
-## Endpoints for querying version 1 of the data
+## Endpoints
 
-### SPARQL
+### Version 1
+
+#### SPARQL
 
 1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/v1/services/v1/sparql
 1. UI for testing: https://data.netwerkdigitaalerfgoed.nl/heritageflix/v1/sparql/v1
 
-### Triple Pattern Fragments (TPF)
+#### Triple Pattern Fragments (TPF)
 
 1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/v1/fragments
 1. UI for testing: https://query.linkeddatafragments.org/#datasources=https%3A%2F%2Fapi.data.netwerkdigitaalerfgoed.nl%2Fdatasets%2Fheritageflix%2Fv1%2Ffragments
 
+### Version 2
+
+(todo)
+
 ## Queries
 
-[Here](./queries)
+1. [Version 1](./queries/v1)
+1. Version 2: (todo)

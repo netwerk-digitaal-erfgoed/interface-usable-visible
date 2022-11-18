@@ -2,7 +2,7 @@
 
 ## About
 
-Heritageflix is a straightforward web application for the general public. They can use the app to browse and discover heritage. The current scope is about artworks, especially paintings.
+Heritageflix is a straightforward web application for the general public. They can use the app to browse and discover heritage.
 
 ## Status
 
