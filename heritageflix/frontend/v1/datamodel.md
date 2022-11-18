@@ -110,9 +110,9 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Title|`schema:name`|Literal|Language: Dutch|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog`@nl|
 |Description|`schema:description`|Literal|Language: Dutch|`Allegorie op de bloei van de Nederlandse visserij na de Tweede Engelse Zeeoorlog (1665-67). Groepsportret van Nederlandse admiraals staande aan de oever van de zee.`@nl|
 |Date created|`schema:temporal`|Literal|TBD: is there a better predicate? Dates aren't always ISO 8601 formatted, so we can't use `schema:dateCreated`|`1667`, `1600-1700`, `1667 - 1671`, `circa 1650`|
-|Year created|`schema:dateCreated`|`xsd:gYear`|The year doesn't always come from the source - it could have been extracted by NDE's data processor|`1667`, `1600`, `1650`|
+|Year created|`schema:dateCreated`|`xsd:gYear`|The year doesn't always come from the source - it could have been extracted by the prototype's data processor|`1667`, `1600`, `1650`|
 |URL of webpage|`schema:mainEntityOfPage`|IRI|`http://hdl.handle.net/10934/RM0001.COLLECT.10001`|
-|Art period and style|`schema:temporalCoverage`|IRI|TBD: is there a better predicate? Also, this data doesn't come from the source; it's added by NDE's data processor|`http://vocab.getty.edu/aat/300021147`|
+|Art period and style|`schema:temporalCoverage`|IRI|TBD: is there a better predicate? Also, this data doesn't come from the source; it's added by the prototype's data processor|`http://vocab.getty.edu/aat/300021147`|
 |Image|`schema:image`|IRI|A blank node|-|
 |Creator|`schema:creator`|IRI|Terminology source: RKDartists|`https://data.rkd.nl/artists/26887`|
 |Publisher|`schema:publisher`|IRI|-|`https://www.rijksmuseum.nl`|
@@ -125,8 +125,8 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |ID|Not applicable|IRI|`http://vocab.getty.edu/aat/300021147`|
 |Type|`rdf:type`|IRI|Value allowed: `schema:DefinedTerm`|`schema:DefinedTerm`|
 |Name|`schema:name`|Literal|Language: Dutch|`Barok`|
-|Start year|`schema:startDate`|`schema:Date`|TBD: is there a better predicate? Also, this value doesn't come from the source; it's added by NDE's data processor|`1590`|
-|End year|`schema:endDate`|`schema:Date`|TBD: is there a better predicate? Also, this value doesn't come from the source; it's added by NDE's data processor|`1750`|
+|Start year|`schema:startDate`|`schema:Date`|TBD: is there a better predicate? Also, this value doesn't come from the source; it's added by the prototype's data processor|`1590`|
+|End year|`schema:endDate`|`schema:Date`|TBD: is there a better predicate? Also, this value doesn't come from the source; it's added by hthe prototype's data processor|`1750`|
 
 **TBD**: is it useful to have a `schema:inDefinedTermSet` predicate, to denote that the art periods belong to a specific term set? This would allow us to add other resources of type `schema:DefinedTerm`, too, even if they're not art periods, but distinguish these from art periods.
 
@@ -137,7 +137,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |ID|Not applicable|IRI|A blank node|-|
 |Type|`rdf:type`|IRI|Value allowed: `schema:ImageObject`|`schema:ImageObject`|
 |URL|`schema:contentUrl`|IRI|-|`https://lh3.googleusercontent.com/Ks-HM3WNwUrnkukVya9poQn_JMHy7hXx226X70MmtC7g9wLs3Ki_yZtEQ0Zkp6PPNARx1SZKStnaPNjnuE-hWMDzcg=s0`|
-|MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by NDE's data processor|`image/jpeg`|
+|MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by the prototype's data processor|`image/jpeg`|
 |License|`schema:license`|IRI|TBD: should we also expose the name of the license, e.g. "Public Domain"?|`http://creativecommons.org/publicdomain/zero/1.0/deed.nl`|
 
 #### Person
@@ -152,10 +152,10 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
-|ID|Not applicable|IRI|This value probably doesn't come from the source; it's added by NDE's data processor|`https://www.rijksmuseum.nl`|
+|ID|Not applicable|IRI|This value probably doesn't come from the source; it's added by the prototype's data processor|`https://www.rijksmuseum.nl`|
 |Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Rijksmuseum`|
-|URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://www.rijksmuseum.nl`|
+|URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by the prototype's data processor|`https://www.rijksmuseum.nl`|
 
 ### Example
 

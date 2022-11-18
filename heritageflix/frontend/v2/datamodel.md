@@ -106,10 +106,10 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |Description|`schema:description`|Literal|Short description of the object|-|`Zicht op de noorder transeptgevel`|
 |Subject|`schema:about`|IRI|Subject of the object|Terminology source: CHT.|`https://data.cultureelerfgoed.nl/term/id/cht/c15af234-87b0-433c-bbe1-880a6f717057`|
 |Date created|`schema:temporal`|Literal|Date when the object was created|TBD: is there a better predicate? Dates aren't always ISO 8601 formatted, so we can't use `schema:dateCreated`|-|`1907-09-28`|
-|Year created|`schema:dateCreated`|`xsd:gYear`|Year when the object was created|The year doesn't always come from the source - it could have been extracted by NDE's data processor|`1907`|
+|Year created|`schema:dateCreated`|`xsd:gYear`|Year when the object was created|The year doesn't always come from the source - it could have been extracted by the prototype's data processor|`1907`|
 |Location|`schema:contentLocation`|IRI|Location depicted on or described by the object|Terminology source: GeoNames. TBD: in Schema.org this should be of type `schema:Place`|`https://sws.geonames.org/2744145/`|
 |URL of webpage|`schema:mainEntityOfPage`|IRI|Online location where the object is presented|-|`http://beeldbank.cultureelerfgoed.nl/alle-afbeeldingen/detail/0091c9e8-9b8c-6926-88c1-2eb6172a3316/media/a42dfbdf-97be-2d58-772c-e87b4b2d7277`|
-|Temporal coverage|`schema:temporalCoverage`|IRI|-|This data doesn't always come from the source; it could have been added by NDE's data processor|`http://vocab.getty.edu/aat/300021147`|
+|Temporal coverage|`schema:temporalCoverage`|IRI|-|This data doesn't always come from the source; it could have been added by the prototype's data processor|`http://vocab.getty.edu/aat/300021147`|
 |Image|`schema:image`|IRI|Image of the object|-|(blank node)|
 |Creator|`schema:creator`|IRI|Creator of the object|Terminology source: RKDartists where applicable; otherwise blank nodes|(blank node)|
 |Publisher|`schema:publisher`|IRI|Publisher of the object|-|`https://www.cultureelerfgoed.nl/`|
@@ -122,7 +122,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |ID|Not applicable|IRI|A blank node|-|
 |Type|`rdf:type`|IRI|Value allowed: `schema:ImageObject`|`schema:ImageObject`|
 |URL|`schema:contentUrl`|IRI|-|`https://images.memorix.nl/rce/thumb/fullsize/a42dfbdf-97be-2d58-772c-e87b4b2d7277.jpg`|
-|MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by NDE's data processor|`image/jpeg`|
+|MIME type|`schema:encodingFormat`|Literal|This value probably doesn't come from the source; it's added by the prototype's data processor|`image/jpeg`|
 |License|`schema:license`|IRI|TBD: should we also expose the name of the license, e.g. "Public Domain"?|`http://creativecommons.org/licenses/by-sa/3.0/`|
 
 #### Term
@@ -153,7 +153,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 
 |Name in CDM|Name|Datatype|Remarks|Example|
 |-|-|-|-|-|
-|ID|Not applicable|IRI|This value probably doesn't come from the source; it's added by NDE's data processor|`https://www.cultureelerfgoed.nl`|
+|ID|Not applicable|IRI|This value probably doesn't come from the source; it's added by the prototype's data processor|`https://www.cultureelerfgoed.nl`|
 |Type|`rdf:type`|IRI|Value allowed: `schema:Organization`|`schema:Organization`|
 |Name|`schema:name`|Literal|-|`Rijksdienst voor het Cultureel Erfgoed`|
-|URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by NDE's data processor|`https://www.cultureelerfgoed.nl`|
+|URL of homepage|`schema:mainEntityOfPage`|IRI|This value doesn't come from the source; it's added by the prototype's data processor|`https://www.cultureelerfgoed.nl`|
