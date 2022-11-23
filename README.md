@@ -12,4 +12,4 @@ Documentation of the project 'Interface Usable-Visible'. Work in progress.
 
 1. Heritageflix: https://heritageflix.netwerkdigitaalerfgoed.nl/
 1. GVN Search and Find: https://gvn-search-find.netlify.app/
-1. Modemuze: https://data.netwerkdigitaalerfgoed.nl/modemuze/-/stories/Modemuze-Knowledge-Graph
+1. Modemuze: https://data.netwerkdigitaalerfgoed.nl/modemuze/-/stories/knowledge-graph
