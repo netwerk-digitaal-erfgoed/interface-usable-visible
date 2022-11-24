@@ -1,0 +1,13 @@
+@prefix schema: <https://schema.org/> .
+
+# TBD: can we generate this data from sources? Or do we have to hard-code it?
+
+<https://museumrotterdam.nl/>
+  a schema:Organization ;
+  schema:name "Museum Rotterdam" ;
+  schema:mainEntityOfPage <https://museumrotterdam.nl/> .
+
+<https://www.cultureelerfgoed.nl/>
+  a schema:Organization ;
+  schema:name "Rijksdienst voor het Cultureel Erfgoed" ;
+  schema:mainEntityOfPage <https://www.cultureelerfgoed.nl/> .
