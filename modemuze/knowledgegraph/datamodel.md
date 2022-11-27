@@ -16,8 +16,8 @@ The data that are required to make the knowledge graph work.
 |Name|Datatype|Cardinality|Description|Remarks|Example|
 |-|-|-|-|-|-|
 |ID|ID|1|Identifier of the object|-|`https://modemuze.nl/localID/europeana-fashion/ZM-17430`|
-|Type|String|1|Type of the object|`CreativeWork`|
-|Specific type|String|0 or more|Specific type of the object|`kinderkleding`|
+|Type|String|1|Type of the object|-|`CreativeWork`|
+|Specific type|String|0 or more|Specific type of the object|-|`kinderkleding`|
 |Title|String|1|Primary title of the object|-|`Paars gebloemde schootjak voor een meisje`|
 |Description|String|0 or 1|Short description of the object|-|`Paars, gebloemd jak, een zogenaamde schootjak voor een meisje (meisjesjak). Het lijfje is middenvoor V-vormig ingerimpeld aan de onderkant. Aan de bovenkant is de stof ingerimpeld in de schouder. De mouw is strak aan de bovenkant met extra ruimte vanaf de elleboog, weer smal toelopend naar de pols. Het bovenlijf en de armen zijn gevoerd met linnen, de schoot niet. De naden zijn gepaspoileerd (versierd met tussen gestikte koordjes). Het jak sluit middenvoor aan de hals met een haak en een trensje. Ter hoogte van de boezem 16 cm geen sluiting, vervolgens zes haken en trensjes tot aan de taille. Het mouwsplit sluit met behulp van drie haken en trensjes. De schoot is achter over een breedte van 37 cm ingerimpeld, middenvoor glad. De weefbreedte van de stof is 64 cm. Katoendruk. Patroon van verticale, zwartwitte bladnerven in combinatie met roze/rode, witte bloemen met paarse en taupe blaadjes,afgewisseld met verticale bloem-en bladranken op paars witte ondergrond.`|
 |Date created|Date|0 or 1|Date when the object was created (precise or a range)|-|`1840/1850`|
