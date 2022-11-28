@@ -1,0 +1,16 @@
+@prefix schema: <https://schema.org/> .
+
+<https://zaansmuseum.nl>
+    a schema:Organization ;
+    schema:name "Zaans Museum" ;
+    schema:mainEntityOfPage <https://zaansmuseum.nl> .
+
+<https://www.dordrechtsmuseum.nl/>
+    a schema:Organization ;
+    schema:name "Dordrechts Museum" ;
+    schema:mainEntityOfPage <https://www.dordrechtsmuseum.nl/> .
+
+<https://textielmuseum.nl/>
+    a schema:Organization ;
+    schema:name "TextielMuseum" ;
+    schema:mainEntityOfPage <https://textielmuseum.nl/> .
