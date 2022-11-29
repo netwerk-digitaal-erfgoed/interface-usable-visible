@@ -18,6 +18,7 @@ The data that are required to make the app work.
 |ID|ID|1|Identifier of the object|`http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316`|
 |Type|String|1|Type of the object|`CreativeWork`|
 |Specific type|String|0 or more|Specific type of the object|`foto`, `tekening`|
+|Identifier|String|1|Unique identifier of the object, to be used as e.g. a slug|`837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316`|
 |Title|String|0 or 1|Primary title of the object|-|
 |Description|String|1|Short description of the object|`Zicht op de noorder transeptgevel`|
 |Subject|String|0 or more|Subject of the object|`kerken`|
@@ -103,6 +104,7 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |ID|Not applicable|IRI|Identifier of the object|-|`http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316`|
 |Type|`rdf:type`|IRI|Type of the object|-|Value allowed: `schema:CreativeWork`|
 |Specific type|`schema:additionalType`|IRI|Specific type of the object|Terminology source: CHT.|`https://data.cultureelerfgoed.nl/term/id/cht/05ff3aa4-a6e8-4d93-b261-94f2bcb6167d`|
+|Identifier|`schema:identifier`|Literal|Unique identifier of the object|The source doesn't provide it; the prototype's data processor generates it|`837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316`|
 |Title|`schema:name`|Literal|Primary title of the object|-|-|
 |Description|`schema:description`|Literal|Short description of the object|-|`Zicht op de noorder transeptgevel`|
 |Subject|`schema:about`|IRI|Subject of the object|Terminology source: CHT.|`https://data.cultureelerfgoed.nl/term/id/cht/c15af234-87b0-433c-bbe1-880a6f717057`|
@@ -171,6 +173,7 @@ As provided by the terminology source (no data processing required). For illustr
 <http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316>
   a schema:CreativeWork ;
   schema:additionalType <https://data.cultureelerfgoed.nl/term/id/cht/05ff3aa4-a6e8-4d93-b261-94f2bcb6167d> ;
+  schema:identifier "837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-0091c9e8-9b8c-6926-88c1-2eb6172a3316" ;
   schema:description "Zicht op de noorder transeptgevel" ;
   schema:about <https://data.cultureelerfgoed.nl/term/id/cht/c15af234-87b0-433c-bbe1-880a6f717057> ;
   schema:temporal "1907-09-28" ;
