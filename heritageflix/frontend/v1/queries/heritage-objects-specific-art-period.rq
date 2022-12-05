@@ -6,17 +6,22 @@ WHERE {
   {
     SELECT *
     WHERE {
+      BIND(<http://vocab.getty.edu/aat/300021147> AS ?temporalCoverage) # 'Barok' - for testing
+
       ?heritageObject a schema:VisualArtwork ;
         schema:name ?name ;
         schema:dateCreated ?dateCreated ;
+        schema:creator ?creator ;
+        schema:temporalCoverage ?temporalCoverage ;
         schema:image ?image .
 
+      # Image
       ?image schema:contentUrl ?imageContentUrl ;
         schema:license ?imageLicense . # TBD: also add name of the license?
       OPTIONAL { ?image schema:encodingFormat ?imageEncodingFormat }
 
-      ?heritageObject schema:creator/<http://schema.org/name> ?creatorName ;
-        schema:temporalCoverage <http://vocab.getty.edu/aat/300021147> . # 'Barok'
+      # Creator
+      ?creator <http://schema.org/name> ?creatorName .
     }
     ORDER BY ?dateCreated
   }

@@ -8,26 +8,28 @@ WHERE {
   ?heritageObject a schema:VisualArtwork ;
     schema:name ?name ;
     schema:description ?description ;
+    schema:temporalCoverage ?temporalCoverage ;
     schema:dateCreated ?dateCreated ;
+    schema:image ?image ;
+    schema:creator ?creator ;
+    schema:publisher ?publisher .
 
   OPTIONAL { ?heritageObject schema:mainEntityOfPage ?webpage }
 
   # Art period
-  ?heritageObject schema:temporalCoverage/schema:name ?artPeriodName ;
-    schema:temporalCoverage/schema:startDate ?artPeriodStartDate ;
-    schema:temporalCoverage/schema:endDate ?artPeriodEndDate .
+  ?temporalCoverage schema:name ?artPeriodName ;
+    schema:startDate ?artPeriodStartDate ;
+    schema:endDate ?artPeriodEndDate .
 
   # Image
-  ?heritageObject schema:image ?image .
   ?image schema:contentUrl ?imageContentUrl ;
     schema:license ?imageLicense . # TBD: also add name of the license?
   OPTIONAL { ?image schema:encodingFormat ?imageEncodingFormat }
 
   # Creator
-  ?heritageObject schema:creator/<http://schema.org/name> ?creatorName .
+  ?creator <http://schema.org/name> ?creatorName .
 
   # Publisher
-  ?heritageObject schema:publisher ?publisher .
   ?publisher schema:name ?publisherName ;
     schema:mainEntityOfPage ?publisherHomepage .
 }
