@@ -27,3 +27,7 @@
 ### Data model
 
 1. [Here](./v2/datamodel.md)
+
+### Queries
+
+1. [Here](./v2/queries)
