@@ -1,7 +1,6 @@
-# Select only the art periods that have been assigned to artworks
-
 PREFIX schema: <https://schema.org/>
 
+# Select only the art periods that have been assigned to heritage objects
 SELECT DISTINCT ?artPeriod
   (COUNT(?heritageObject) AS ?numberOfHeritageObjects)
   ?name

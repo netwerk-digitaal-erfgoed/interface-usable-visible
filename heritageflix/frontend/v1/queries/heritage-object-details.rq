@@ -1,5 +1,6 @@
 PREFIX schema: <https://schema.org/>
 
+# Select the heritage object's details
 SELECT *
 WHERE {
   BIND(<http://data.collectienederland.nl/resource/document/mauritshuis/264> AS ?heritageObject)

@@ -1,7 +1,6 @@
 PREFIX schema: <https://schema.org/>
 
 # Use a 'scrollable cursor' - https://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksHowToHandleBandwidthLimitExceed
-
 SELECT *
 WHERE {
   {

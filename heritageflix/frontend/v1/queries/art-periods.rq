@@ -1,7 +1,6 @@
-# Select all art periods, assigned to artworks or not
-
 PREFIX schema: <https://schema.org/>
 
+# Select all art periods, assigned to heritage objects or not
 SELECT *
 WHERE {
   ?artPeriod a schema:DefinedTerm ;
