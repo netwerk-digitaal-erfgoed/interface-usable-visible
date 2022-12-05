@@ -9,6 +9,7 @@ WHERE {
     schema:name ?name ;
     schema:description ?description ;
     schema:dateCreated ?dateCreated ;
+
   OPTIONAL { ?heritageObject schema:mainEntityOfPage ?webpage }
 
   # Art period
@@ -26,6 +27,7 @@ WHERE {
   ?heritageObject schema:creator/<http://schema.org/name> ?creatorName .
 
   # Publisher
-  ?heritageObject schema:publisher/schema:name ?publisherName .
-  OPTIONAL { ?heritageObject schema:publisher/schema:mainEntityOfPage ?publisherHomepage }
+  ?heritageObject schema:publisher ?publisher .
+  ?publisher schema:name ?publisherName ;
+    schema:mainEntityOfPage ?publisherHomepage .
 }
