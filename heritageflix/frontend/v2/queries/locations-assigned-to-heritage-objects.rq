@@ -1,0 +1,15 @@
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <https://schema.org/>
+
+# Select only the locations that have been assigned to heritage objects
+SELECT DISTINCT ?contentLocation
+  (COUNT(?heritageObject) AS ?numberOfHeritageObjects)
+WHERE {
+  ?heritageObject a schema:CreativeWork ;
+    schema:contentLocation ?contentLocation .
+
+  # TODO as soon as we can query GeoNames
+  # ?contentLocation gn:name ?locationName .
+}
+#ORDER BY ?locationName
+LIMIT 1000

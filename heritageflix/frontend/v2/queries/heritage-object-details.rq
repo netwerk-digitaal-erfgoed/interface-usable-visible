@@ -1,0 +1,38 @@
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <https://schema.org/>
+
+# Select the heritage object's details
+SELECT *
+WHERE {
+  BIND(<http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-8e8108a5-19de-56fa-0e5a-792a05bf8b47> AS ?heritageObject)
+
+  ?heritageObject a schema:CreativeWork ;
+    schema:description ?description ;
+    schema:temporal ?temporal ;
+    schema:dateCreated ?dateCreated ;
+    schema:image ?image ;
+    schema:publisher ?publisher ;
+    schema:creator ?creator ;
+    schema:contentLocation ?contentLocation .
+
+  OPTIONAL { ?heritageObject schema:additionalType ?additionalType }
+  OPTIONAL { ?heritageObject schema:name ?name }
+  OPTIONAL { ?heritageObject schema:about ?about }
+  OPTIONAL { ?heritageObject schema:temporalCoverage ?temporalCoverage }
+  OPTIONAL { ?heritageObject schema:mainEntityOfPage ?webpage }
+
+  # Image
+  ?image schema:contentUrl ?imageContentUrl ;
+    schema:license ?imageLicense . # TBD: also add name of the license?
+  OPTIONAL { ?image schema:encodingFormat ?imageEncodingFormat }
+
+  # Creator
+  ?creator schema:name ?creatorName .
+
+  # Publisher
+  ?publisher schema:name ?publisherName ;
+    schema:mainEntityOfPage ?publisherHomepage .
+
+  # Location - TODO as soon as we can query GeoNames
+  # ?contentLocation gn:name ?locationName .
+}
