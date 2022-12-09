@@ -1,0 +1,6 @@
+@prefix schema: <https://schema.org/> .
+
+<https://www.cultureelerfgoed.nl/>
+  a schema:Organization ;
+  schema:name "Rijksdienst voor het Cultureel Erfgoed" ;
+  schema:mainEntityOfPage <https://www.cultureelerfgoed.nl/> .
