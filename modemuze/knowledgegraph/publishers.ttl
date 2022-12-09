@@ -14,3 +14,8 @@
     a schema:Organization ;
     schema:name "TextielMuseum" ;
     schema:mainEntityOfPage <https://textielmuseum.nl/> .
+
+<https://www.openluchtmuseum.nl/>
+    a schema:Organization ;
+    schema:name "Nederlands Openluchtmuseum" ;
+    schema:mainEntityOfPage <https://www.openluchtmuseum.nl/> .
