@@ -17,12 +17,7 @@
 1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/v1/services/v1/sparql
 1. UI for testing: https://data.netwerkdigitaalerfgoed.nl/heritageflix/v1/sparql/v1
 
-#### Triple Pattern Fragments (TPF)
-
-1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/v1/fragments
-1. UI for testing: https://query.linkeddatafragments.org/#datasources=https%3A%2F%2Fapi.data.netwerkdigitaalerfgoed.nl%2Fdatasets%2Fheritageflix%2Fv1%2Ffragments
-
-## Version 2: generic
+## Version 2: churches
 
 ### Data model
 
@@ -31,3 +26,8 @@
 ### Queries
 
 1. [Here](./v2/queries)
+
+#### SPARQL
+
+1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/churches-v1/services/churches-v1/sparql
+1. UI for testing: https://data.netwerkdigitaalerfgoed.nl/heritageflix/churches-v1/sparql/churches-v1
