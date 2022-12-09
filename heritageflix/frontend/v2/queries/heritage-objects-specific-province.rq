@@ -1,0 +1,37 @@
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <https://schema.org/>
+
+# Use a 'scrollable cursor' - https://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksHowToHandleBandwidthLimitExceed
+SELECT *
+WHERE {
+  {
+    SELECT *
+    WHERE {
+      BIND(<https://sws.geonames.org/3319179/> AS ?province) # "Provincie Flevoland" - for testing
+
+      ?heritageObject a schema:CreativeWork ;
+        schema:identifier ?identifier ;
+        schema:description ?description ;
+        schema:dateCreated ?dateCreated ;
+        schema:creator ?creator ;
+        schema:contentLocation ?contentLocation ;
+        schema:image ?image .
+
+      # Image
+      ?image schema:contentUrl ?imageContentUrl ;
+        schema:license ?imageLicense . # TBD: also add name of the license?
+      OPTIONAL { ?image schema:encodingFormat ?imageEncodingFormat }
+
+      # Creator
+      ?creator schema:name ?creatorName .
+
+      # Location
+      ?contentLocation gn:name ?locationName ;
+        gn:parentADM1 ?province .
+      ?province gn:name ?provinceName .
+    }
+    ORDER BY ?locationName
+  }
+}
+LIMIT 1000
+OFFSET 0 # For pagination

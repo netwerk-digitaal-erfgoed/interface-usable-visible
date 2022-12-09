@@ -1,0 +1,15 @@
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <https://schema.org/>
+
+# Select the provinces to which locations in heritage objects belong
+SELECT ?province
+  ?provinceName
+  (COUNT(?heritageObject) AS ?numberOfHeritageObjects)
+WHERE {
+  ?heritageObject a schema:CreativeWork ;
+    schema:contentLocation ?contentLocation .
+
+  ?contentLocation gn:parentADM1 ?province .
+  ?province gn:name ?provinceName .
+}
+ORDER BY ?provinceName

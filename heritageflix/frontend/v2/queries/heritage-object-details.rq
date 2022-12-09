@@ -4,9 +4,10 @@ PREFIX schema: <https://schema.org/>
 # Select the heritage object's details
 SELECT *
 WHERE {
-  BIND(<http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-8e8108a5-19de-56fa-0e5a-792a05bf8b47> AS ?heritageObject)
+  BIND(<http://data.collectienederland.nl/resource/document/rce-beeldbank/837866ec-3f22-11e4-9dc7-3b4bf4a0ed46-8e8108a5-19de-56fa-0e5a-792a05bf8b47> AS ?heritageObject) # For testing
 
   ?heritageObject a schema:CreativeWork ;
+    schema:identifier ?identifier ;
     schema:description ?description ;
     schema:temporal ?temporal ;
     schema:dateCreated ?dateCreated ;
@@ -33,6 +34,8 @@ WHERE {
   ?publisher schema:name ?publisherName ;
     schema:mainEntityOfPage ?publisherHomepage .
 
-  # Location - TODO as soon as we can query GeoNames
-  # ?contentLocation gn:name ?locationName .
+  # Location
+  ?contentLocation gn:name ?locationName ;
+    gn:parentADM1 ?province .
+  ?province gn:name ?provinceName .
 }
