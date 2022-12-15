@@ -16,12 +16,12 @@ The data that are required to make the app work.
 |Name|Datatype|Cardinality|Description|Remarks|Example|
 |-|-|-|-|-|-|
 |ID|ID|1|Identifier of the object|-|`http://data.collectienederland.nl/resource/document/zuiderzeemuseum/FR06089`|
-|Type|String|1|Type of the object|TBD: how specific should the type be?|`Artwork`, `Book`, `Photo`|
+|Type|String|1|Type of the object|-|`CreativeWork`|
+|Specific type|String|0 or more|Specific type of the object|-|`foto`, `tekening`|
 |Title|String|1|Primary title of the object|-|`Enkhuizen. Zuidertoren met buurt.`|
 |Description|String|0 or 1|Short description of the object|-|`Prentbriefkaart uit de Collectie Ringeling`|
 |Date created|Date|0 or 1|Date when the object was created (precise or a range)|Normalized date (not provided by all sources)|`1900`|
 |Location|ID|0 or more|Location depicted on or described by the object|-|`Enkhuizen`|
-|Keywords|ID|0 or more|Keywords or tags to describe the object|-|(todo)|
 |URL of webpage|URL|1|Online location where the object is presented|-|`http://hdl.handle.net/21.12111/zzm-collect-72250`|
 |Image|ID|1|Image of the object|TBD: what if there is no image, just e.g. an audio fragment?|`https://images.memorix.nl/zzm/download/fullsize/7ab75b4f-3e37-9f95-bbc2-ae5d8f4eed6d/image`|
 |Creator|String|0 or more|Creator of the object|Datatype = string, not ID (won't be used for structured searching)|(todo)|
@@ -82,15 +82,14 @@ The aim is to make it easy for frontend developers to use the data. This means: 
 |-|-|-|-|-|-|
 |ID|Not applicable|IRI|Identifier of the object|-|`http://data.collectienederland.nl/resource/document/zuiderzeemuseum/FR06089`|
 |Type|`rdf:type`|IRI|Type of the object|TBD: allow other types?|`schema:CreativeWork`|
-|n/a|`schema:additionalType`|IRI|Specific type of the object|-|Terminology source: CHT. `https://data.cultureelerfgoed.nl/term/id/cht/1ea51d41-ca5c-40d3-8a85-362968878b0d`|
+|Specific type|`schema:additionalType`|IRI|Specific type of the object|Terminology source: CHT.|`https://data.cultureelerfgoed.nl/term/id/cht/1ea51d41-ca5c-40d3-8a85-362968878b0d`|
 |Title|`schema:name`|Literal|Primary title of the object|-|`Enkhuizen. Zuidertoren met buurt.`|
 |Description|`schema:description`|Literal|Short description of the object|-|`Prentbriefkaart uit de Collectie Ringeling`|
 |Date created|`schema:dateCreated`|Date|Date when the object was created (precise or a range)|-|`1900`|
 |Location|`schema:contentLocation`|IRI|Location depicted on or described by the object|Terminology source: GeoNames. TBD: in Schema.org this should be of type `schema:Place`|`https://sws.geonames.org/2756077/`|
-|Keywords|`schema:keywords`|IRI|Keywords or tags to describe the object|Terminology source: CHT|(todo)|
 |URL of webpage|`schema:mainEntityOfPage`|IRI|Online location where the object is presented|-|`http://hdl.handle.net/21.12111/zzm-collect-72250`|
 |Image|`schema:image`|IRI|Image of the object|-|`https://images.memorix.nl/zzm/download/fullsize/7ab75b4f-3e37-9f95-bbc2-ae5d8f4eed6d/image`|
-|Creator|`schema:creator`|Literal|Creator of the object|Literal, not a term (no need for currently)|(todo)|
+|Creator|`schema:creator`|Literal|Creator of the object|Literal, not a term (no need for currently)|-|
 |Publisher|`schema:publisher`|IRI|Publisher of the object|-|`https://www.zuiderzeemuseum.nl/`|
 |Source|`schema:isBasedOn`|IRI|Source of the data, for traceability|-|`http://data.collectienederland.nl/resource/document/zuiderzeemuseum/FR06089`|
 
