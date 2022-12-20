@@ -23,8 +23,11 @@ WHERE {
 
   # Image
   ?image schema:contentUrl ?imageContentUrl ;
-    schema:license ?imageLicense . # TBD: also add name of the license?
   OPTIONAL { ?image schema:encodingFormat ?imageEncodingFormat }
+
+  # Image license
+  ?image schema:license ?imageLicense .
+  ?imageLicense schema:name ?imageLicenseName .
 
   # Creator
   ?creator <http://schema.org/name> ?creatorName .
