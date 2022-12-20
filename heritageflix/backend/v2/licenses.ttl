@@ -2,7 +2,7 @@
 
 # TBD: can we generate this data from sources? Or do we have to hard-code it?
 
-# URL should have been 'http://rightsstatements.org/vocab/InC/1.0/' - not provived correctly by the source
+# URL should have been 'http://rightsstatements.org/vocab/InC/1.0/' - not provided correctly by the source
 <https://rightsstatements.org/page/InC/1.0/>
   a schema:DigitalDocument ; # TBD: is there a better class?
   schema:additionalType <http://vocab.getty.edu/aat/300027759> ; # "Licenses"

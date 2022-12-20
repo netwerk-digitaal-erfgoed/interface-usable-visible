@@ -1,0 +1,32 @@
+@prefix schema: <https://schema.org/> .
+
+# TBD: can we generate this data from sources? Or do we have to hard-code it?
+
+# URL should have been 'http://rightsstatements.org/vocab/InC/1.0/' - not provided correctly by the source
+<https://rightsstatements.org/page/InC/1.0/>
+  a schema:DigitalDocument ;
+  schema:additionalType <http://vocab.getty.edu/aat/300027759> ; # "Licenses"
+  schema:name "Auteursrechtelijk beschermd" .
+
+# URL should have been 'http://rightsstatements.org/vocab/InC/1.0/' - not provided correctly by the source
+<http://rightsstatements.org/page/InC/1.0/?language=nl>
+  a schema:DigitalDocument ;
+  schema:additionalType <http://vocab.getty.edu/aat/300027759> ; # "Licenses"
+  schema:name "Auteursrechtelijk beschermd" .
+
+# Retired rights statement and URL should have been 'https://www.europeana.eu/en/rights/rr-f'
+<http://www.europeana.eu/rights/rr-f/>
+  a schema:DigitalDocument ;
+  schema:additionalType <http://vocab.getty.edu/aat/300027759> ; # "Licenses"
+  schema:name "Auteursrechtelijk beschermd" .
+
+# Retired rights statement and URL should have been 'https://www.europeana.eu/en/rights/rr-f'
+<http://www.europeana.eu/portal/rights/rr-f.html>
+  a schema:DigitalDocument ;
+  schema:additionalType <http://vocab.getty.edu/aat/300027759> ; # "Licenses"
+  schema:name "Auteursrechtelijk beschermd" .
+
+<https://creativecommons.org/publicdomain/mark/1.0/>
+  a schema:DigitalDocument ;
+  schema:additionalType <http://vocab.getty.edu/aat/300027759> ; # "Licenses"
+  schema:name "Geen auteursrecht" .
