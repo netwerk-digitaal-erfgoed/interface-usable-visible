@@ -19,3 +19,8 @@
     a schema:Organization ;
     schema:name "Nederlands Openluchtmuseum" ;
     schema:mainEntityOfPage <https://www.openluchtmuseum.nl/> .
+
+<https://www.amsterdammuseum.nl/>
+    a schema:Organization ;
+    schema:name "Amsterdam Museum" ;
+    schema:mainEntityOfPage <https://www.amsterdammuseum.nl/> .
