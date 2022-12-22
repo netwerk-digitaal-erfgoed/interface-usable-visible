@@ -10,6 +10,7 @@ Documentation of the project 'Interface Usable-Visible'. Work in progress.
 
 ## URLs of prototypes
 
-1. Heritageflix: https://heritageflix.netwerkdigitaalerfgoed.nl/
-1. GVN Search and Find: https://gvn-search-find.netlify.app/
+1. Heritageflix-paintings: http://heritageflix-paintings.demo.netwerkdigitaalerfgoed.nl/
+1. Heritageflix-churches: http://heritageflix-churches.demo.netwerkdigitaalerfgoed.nl/
+1. GVN Search and Find: https://gvn.demo.netwerkdigitaalerfgoed.nl/
 1. Modemuze: https://data.netwerkdigitaalerfgoed.nl/modemuze/-/stories/knowledge-graph
