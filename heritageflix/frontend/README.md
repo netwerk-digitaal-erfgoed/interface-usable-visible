@@ -14,8 +14,8 @@
 
 #### SPARQL
 
-1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/artworks-v1/services/artworks-v1/sparql
-1. UI for testing: https://data.netwerkdigitaalerfgoed.nl/heritageflix/artworks-v1/sparql/artworks-v1
+1. URL: https://api.data.netwerkdigitaalerfgoed.nl/datasets/heritageflix/artworks-v2/services/artworks-v2/sparql
+1. UI for testing: https://data.netwerkdigitaalerfgoed.nl/heritageflix/artworks-v2/sparql/artworks-v2
 
 ## Version 2: churches
 
